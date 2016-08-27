@@ -10,12 +10,13 @@
 		<!--final de Estilos-->
 
 		<!--Lógica-Programación-->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="jsFerreteConstruccion.js"></script>
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body>
+	<body ng-app="FerreteConstruccion" ng-controller="controladorFC">
 		<div class="CajaUno animated bounceInDown">
 			
 		
@@ -32,9 +33,9 @@
 		<div class="CajaUno animated bounceInLeft">
 			
 			
-			<button  class="MiBotonUTN" onclick="Rectangulo()" >A- Rectangulo de alambre</button>
-			<button  class="MiBotonUTN" onclick="Circulo()" >B- Circulo de alambre</button>
-			<button  class="MiBotonUTN" onclick="Materiales()" >C- Materiales contrapiso</button>
+			<button  class="MiBotonUTN" ng-click="Rectangulo()" >A- Rectangulo de alambre</button>
+			<button  class="MiBotonUTN" ng-click="Circulo()" >B- Circulo de alambre</button>
+			<button  class="MiBotonUTN" ng-click="Materiales()" >C- Materiales contrapiso</button>
 
 		</div>
 
