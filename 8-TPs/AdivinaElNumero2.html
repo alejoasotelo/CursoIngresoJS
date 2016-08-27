@@ -10,29 +10,30 @@
 		<!--final de Estilos-->
 
 		<!--Lógica-Programación-->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="jsAdivinaElNumero2.js"></script>
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body>
+	<body ng-app="AdivinaElNumero2" ng-controller="controladorADV2">
 		<div class="CajaUno animated bounceInDown">
 			
 		
 			<form id="FormIngreso">
 
-				<input type="text"  placeholder="Ingrese número" id="numero">
+				<input type="text"  placeholder="Ingrese número" id="numero" ng-model="juego.resp_ingresada">
 				
 				<br>
-				<input type="text"  placeholder="intentos" readonly id="intentos">
+				<input type="text"  placeholder="intentos" readonly id="intentos" ng-model="juego.intentos">
 			</form>
 			
 		</div>
 		<div class="CajaUno animated bounceInLeft">
 			
-		<button style="height:5em;" class="MiBotonUTN"  onclick="verificar()" >Verificar</button>
+		<button style="height:5em;" class="MiBotonUTN"  ng-click="verificar()" >Verificar</button>
 			
-			<button  class="MiBotonUTN" onclick="comenzar()" >Comenzar</button>
+			<button  class="MiBotonUTN" ng-click="comenzar()" >Comenzar</button>
 
 		</div>
 
