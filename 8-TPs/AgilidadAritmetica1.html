@@ -10,26 +10,27 @@
 		<!--final de Estilos-->
 
 		<!--Lógica-Programación-->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="jsAgilidadAritmetica1.js"></script>
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body onload="comenzar()">
+	<body ng-app="AgilidadAritmetica1" ng-controller="controladorAA1" ng-init="comenzar()">
 		<div class="CajaUno animated bounceInDown">
 			
 
-			<input type="text" readonly id="PrimerNumero">
-			<input type="text" readonly id="Operador">
-			<input type="text" readonly id="SegundoNumero">
+			<input type="text" readonly id="PrimerNumero" ng-model="juego.numeros.uno">
+			<input type="text" readonly id="Operador" ng-model="juego.numeros.operador">
+			<input type="text" readonly id="SegundoNumero" ng-model="juego.numeros.dos">
 			<form id="FormIngreso">
-				<input type="text"  id="Respuesta">
+				<input type="text"  id="Respuesta" placeholder="Ingrese la respuesta" ng-model="juego.respuesta_usuario">
 				<center>
 					<img src="imagenes/interrogacion.jpg" >
 				</center>
 				
 			</form>
-			<button  class="MiBotonUTN" onclick="Responder()" >Aceptar</button>
+			<button  class="MiBotonUTN" ng-click="responder()" >Aceptar</button>
 		</div>
 		<div class="CajaUno animated bounceInLeft">
 			
