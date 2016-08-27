@@ -6,9 +6,9 @@ miAplicacion.controller('controladorADB1', function($scope) {
 
 	$scope.comenzar = function(){
 
-		$scope.juego.resp_ingresada = 0;
+		$scope.resetearRespuestaIngresada();
 		$scope.juego.resp_correcta = Math.floor(Math.random()*100);
-		$scope.juego.intentos = 0;
+		$scope.juego.intentos = null;
 
 	}
 
@@ -24,12 +24,20 @@ miAplicacion.controller('controladorADB1', function($scope) {
 			if ($scope.juego.resp_ingresada > $scope.juego.resp_correcta)
 				alert('Te pasaste...');
 			else
-				alert('Te falto...')
+				alert('Te falto...');
 
-			$scope.juego.intentos++;
+			$scope.resetearRespuestaIngresada();
+
+			$scope.juego.intentos = $scope.juego.intentos == null ? 1 : $scope.juego.intentos+1;
 
 		}
 	};
+
+	$scope.resetearRespuestaIngresada = function(){
+
+		$scope.juego.resp_ingresada = null;
+
+	}
 
 	$scope.comenzar();
 
