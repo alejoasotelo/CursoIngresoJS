@@ -16,7 +16,7 @@ miAplicacion.controller('controladorADB1', function($scope) {
 
 		if ($scope.juego.resp_ingresada == $scope.juego.resp_correcta)
 		{
-			alert("Usted es un ganador con " + $scope.juego.intentos);
+			alert("¡Usted es un ganador con " + $scope.juego.intentos + " intentos!");
 			$scope.comenzar();
 		}
 		else
