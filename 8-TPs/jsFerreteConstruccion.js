@@ -7,15 +7,37 @@ var app = angular.module('FerreteConstruccion', []);
 
 app.controller('controladorFC', function($scope){
 
+	$scope.usuario = {};
+
 	$scope.Rectangulo = function(){
+
+		var perimetro = ($scope.usuario.largo * 2) +
+						($scope.usuario.ancho * 2);
+
+		// Multiplico por 3 hilos de alambre.
+		var cant_alambre = perimetro * 3;
+
+		alert('Necesita '+cant_alambre+'mts de alambre.');
 
 	}
 
 	$scope.Circulo = function(){
 
+		var perimetro = 2 * Math.PI * $scope.usuario.radio;
+
+		// Multiplico por 3 hilos de alambre.
+		var cant_alambre = perimetro * 3;
+
+		alert('Necesita '+cant_alambre+'mts de alambre.');
+
 	}
 
 	$scope.Materiales = function(){
+
+		// Averiguo la superficio (mts^2);
+		var superficie = $scope.usuario.largo * $scope.usuario.ancho;
+
+
 
 	}
 
